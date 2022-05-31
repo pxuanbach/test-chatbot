@@ -11,7 +11,7 @@ const bot = new methods(process.env.ACCESS_TOKEN)
 app.use(Restify.plugins.jsonp())
 app.use(Restify.plugins.bodyParser())
 
-app.get('/', (req, res) => {
+app.get('/webhook', (req, res) => {
     //console.log(req.query['hub.challenge'])
     // Parse the query params
     let mode = req.query['hub.mode'];
