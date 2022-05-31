@@ -6,6 +6,7 @@ const app = Restify.createServer({
 require('dotenv').config()
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN
+const PORT = process.env.PORT || 5000
 const bot = new methods(process.env.ACCESS_TOKEN)
 
 app.use(Restify.plugins.jsonp())
@@ -49,4 +50,4 @@ app.post('/', (req, res, next) => {
     res.send(200)
 })
 
-app.listen(8080)
+app.listen(PORT, () => console.log("listening on port", PORT))
