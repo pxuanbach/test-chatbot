@@ -11,6 +11,10 @@ const bot = new methods(process.env.ACCESS_TOKEN)
 app.use(Restify.plugins.jsonp())
 app.use(Restify.plugins.bodyParser())
 
+app.get('/', function (req, res) {
+    res.send('This is TestBot Server');
+});
+
 app.get('/webhook', (req, res) => {
     //console.log(req.query['hub.challenge'])
     // Parse the query params
